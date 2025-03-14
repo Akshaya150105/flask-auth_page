@@ -1,0 +1,51 @@
+Restaurant ID,Restaurant Name,Cuisine,Restaurant Location,Average Rating
+REST1,Mexican Grill,Indian,Pune,3.22
+REST2,Burger Hub,Indian,Bangalore,3.05
+REST3,Healthy Bites,Mexican,Pune,4.1
+REST4,Curry House,Indian,Ahmedabad,4.32
+REST5,Curry House,Indian,Bangalore,4.24
+REST6,Healthy Bites,Japanese,Ahmedabad,3.25
+REST7,Curry House,Indian,Chennai,3.5
+REST8,Sushi Central,Italian,Chennai,4.1
+REST9,Tandoori Delights,Healthy,Pune,4.74
+REST10,Pizza Palace,Mexican,Bangalore,3.88
+REST11,Healthy Bites,Fast Food,Ahmedabad,3.65
+REST12,Curry House,Italian,Chennai,4.17
+REST13,Burger Hub,Indian,Ahmedabad,4.51
+REST14,Pizza Palace,Italian,Delhi,4.23
+REST15,Burger Hub,Indian,Kolkata,3.87
+REST16,Burger Hub,Indian,Mumbai,4.86
+REST17,Burger Hub,Japanese,Bangalore,3.51
+REST18,Mexican Grill,Italian,Chennai,3.11
+REST19,Tandoori Delights,Japanese,Delhi,3.75
+REST20,Curry House,Italian,Mumbai,4.26
+REST21,Tandoori Delights,Indian,Kolkata,4.66
+REST22,Tandoori Delights,Italian,Ahmedabad,4.56
+REST23,Sushi Central,Fast Food,Pune,4.63
+REST24,Healthy Bites,Indian,Pune,3.09
+REST25,Healthy Bites,Fast Food,Bangalore,3.71
+REST26,Sushi Central,Fast Food,Hyderabad,4.79
+REST27,Pizza Palace,Italian,Delhi,4.35
+REST28,Curry House,Italian,Pune,4.71
+REST29,Sushi Central,Italian,Kolkata,4.08
+REST30,Tandoori Delights,Mexican,Mumbai,3.65
+REST31,Tandoori Delights,Healthy,Kolkata,3.22
+REST32,Pizza Palace,Italian,Ahmedabad,3.7
+REST33,Sushi Central,Healthy,Bangalore,4.6
+REST34,Burger Hub,Indian,Delhi,3.11
+REST35,Pasta Fiesta,Fast Food,Kolkata,3.69
+REST36,Tandoori Delights,Japanese,Mumbai,4.48
+REST37,Pizza Palace,Italian,Kolkata,4.27
+REST38,Pizza Palace,Italian,Kolkata,3.05
+REST39,Tandoori Delights,Japanese,Mumbai,3.14
+REST40,Mexican Grill,Fast Food,Bangalore,4.23
+REST41,Healthy Bites,Italian,Mumbai,4.76
+REST42,Healthy Bites,Healthy,Delhi,4.06
+REST43,Tandoori Delights,Healthy,Hyderabad,3.92
+REST44,Pasta Fiesta,Italian,Chennai,3.37
+REST45,Sushi Central,Japanese,Kolkata,3.85
+REST46,Pasta Fiesta,Japanese,Mumbai,3.29
+REST47,Healthy Bites,Fast Food,Ahmedabad,3.13
+REST48,Pasta Fiesta,Fast Food,Hyderabad,3.5
+REST49,Mexican Grill,Indian,Kolkata,4.85
+REST50,Pizza Palace,Fast Food,Pune,4.4

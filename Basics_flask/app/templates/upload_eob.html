@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload EOB Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .upload-container {
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+        .file-input {
+            margin: 10px 0;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        td {
+            background: #f9f9f9;
+        }
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Upload EOB Files</h1>
+
+        <div class="upload-container">
+            <h2>Select a File</h2>
+            <form id="uploadForm">
+                <input type="file" name="file" id="file" class="file-input" accept=".csv,.json" required>
+                <button type="submit" class="btn">Upload</button>
+            </form>
+            <div id="uploadStatus" class="message"></div>
+        </div>
+
+        <div id="filePreview" class="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('file');
+            if (!fileInput.files.length) {
+                alert("Please select a file.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            const statusDiv = document.getElementById('uploadStatus');
+            const previewDiv = document.getElementById('filePreview');
+
+            statusDiv.innerHTML = 'Uploading...';
+            previewDiv.innerHTML = '';
+
+            fetch('/api/upload_eob', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    statusDiv.innerHTML = `<p style="color: red">Error: ${data.error}</p>`;
+                } else {
+                    statusDiv.innerHTML = `<p style="color: green">Success: ${data.message}</p>`;
+
+                    // Display file preview
+                    if (data.preview) {
+                        let table = '<h3>File Preview:</h3><table><tr>';
+                        data.preview.headers.forEach(header => {
+                            table += `<th>${header}</th>`;
+                        });
+                        table += '</tr>';
+
+                        data.preview.rows.forEach(row => {
+                            table += '<tr>';
+                            row.forEach(cell => {
+                                table += `<td>${cell}</td>`;
+                            });
+                            table += '</tr>';
+                        });
+                        table += '</table>';
+
+                        previewDiv.innerHTML = table;
+                    }
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = `<p style="color: red">Error: ${error.message}</p>`;
+            });
+        });
+    </script>
+
+</body>
+</html>
