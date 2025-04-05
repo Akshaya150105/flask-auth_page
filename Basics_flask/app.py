@@ -1,20 +1,4 @@
-# Step 1: Set up the project structure
-# Create a directory structure like this:
-# my_flask_app/
-# ├── app.py
-# ├── templates/
-# │   ├── home.html
-# │   ├── login.html
-# │   └── signup.html
-# ├── static/
-# │   └── style.css
-# └── instance/
-#     └── users.db (will be created automatically)
 
-# Step 2: Install required packages
-# pip install flask flask-sqlalchemy flask-login flask-wtf email_validator
-
-# Step 3: Create the main application file (app.py)
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
